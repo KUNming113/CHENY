@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>体验详情 - 尊享服务平台</title>
+    <title>体验详情 - 昆明娱乐指南</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -167,7 +167,7 @@
         <button class="back-btn" onclick="window.history.back()"><i class="fas fa-arrow-left"></i></button>
         <div class="logo">
             <div class="logo-icon"><i class="fas fa-crown"></i></div>
-            <div class="logo-text">尊享服务</div>
+            <div class="logo-text">昆明娱乐指南</div>
         </div>
         <div class="title" id="exp-title">体验详情</div>
         <div class="desc" id="exp-desc"></div>
@@ -179,26 +179,26 @@
             <div class="feature"><i class="fas fa-award"></i>行业认证 · 值得信赖</div>
         </div>
         <div class="footer">
-            <p>© 2023 尊享服务平台 · 诚信为本 品质至上 · 隐私政策 | 服务条款</p>
+            <p>© 2025 昆明娱乐指南 · 诚信为本 品质至上 · 隐私政策 | 服务条款</p>
         </div>
     </div>
     <script>
         // 体验内容数据
         const expData = {
             low: {
-                title: '低端体验',
+                title: '性价比推荐',
                 desc: '经济实惠的基础服务，满足您的日常需求。高性价比选择，专业团队保障服务质量。',
                 prices: [
-                    { label: '单次', price: '800元', duration: '60分钟' },
-                    { label: '两次', price: '1000元', duration: '90分钟' }
+                    { label: '单次（带一些简单服务）', price: '800元', duration: '60分钟' },
+                    { label: '两次（害怕不过瘾可以给自己买个保险）', price: '1000元', duration: '90分钟' }
                 ]
             },
             mid: {
                 title: '中端体验',
                 desc: '平衡性能与价格的最佳选择，提供更多定制化选项。专业团队全程支持。',
                 prices: [
-                    { label: '单次', price: '1200元', duration: '60分钟' },
-                    { label: '两次', price: '1600元', duration: '90分钟' }
+                    { label: '单次（天花板级别的服务）', price: '1200元', duration: '60分钟' },
+                    { label: '两次（虽然贵几张但是性价比非常推荐）', price: '1600元', duration: '90分钟' }
                 ]
             },
             high: {
@@ -227,7 +227,7 @@
             div.innerHTML = `<span>${item.label}</span><span>${item.price} <span class="duration">${item.duration}</span></span>`;
             priceList.appendChild(div);
         });
-        // 低端体验添加额外说明
+        // 性价比推荐添加额外说明
         if(type === 'low') {
             const extra = document.createElement('div');
             extra.style = 'margin-top:18px; color:#ffe066; font-size:22px; text-align:center; font-weight:900; letter-spacing:1px; text-shadow:0 2px 8px #000, 0 0px 2px #d4af37; padding:8px 0;';
