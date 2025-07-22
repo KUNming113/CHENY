@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体验详情 - 尊享服务平台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0c1a2d 0%, #0f2b46 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(25, 80, 120, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(25, 80, 120, 0.15) 0%, transparent 20%);
+            z-index: -1;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 40px 30px 30px 30px;
+            position: relative;
+            animation: fadeInDown 0.8s;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px; left: 20px;
+            background: rgba(212,175,55,0.15);
+            color: #d4af37;
+            border: none;
+            border-radius: 50%;
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: rgba(212,175,55,0.3);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .logo-icon {
+            background: linear-gradient(135deg, #d4af37 0%, #f9e076 100%);
+            width: 60px; height: 60px;
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            margin-right: 15px;
+            box-shadow: 0 0 18px rgba(212,175,55,0.3);
+            transform: rotate(45deg);
+        }
+        .logo-icon i {
+            font-size: 28px;
+            color: #0c1a2d;
+            transform: rotate(-45deg);
+        }
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(to right, #d4af37, #f9e076);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+        .title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #d4af37, #f9e076);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .desc {
+            text-align: center;
+            color: #c0d8f0;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .price-list {
+            margin: 0 auto 30px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .price-item {
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 18px;
+            color: #f9e076;
+            font-weight: 500;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border: 1px solid rgba(212,175,55,0.15);
+        }
+        .price-item .duration {
+            color: #a0c0e8;
+            font-size: 15px;
+            font-weight: 400;
+            margin-left: 10px;
+        }
+        .feature-list {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+        .feature {
+            background: rgba(255,255,255,0.05);
+            border-radius: 50px;
+            padding: 10px 20px;
+            color: #a0c0e8;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        .feature i {
+            color: #d4af37;
+            margin-right: 8px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #6080a0;
+            font-size: 14px;
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            .container { padding: 20px 8px; }
+            .logo-text { font-size: 20px; }
+            .title { font-size: 20px; }
+            .price-item { font-size: 15px; padding: 12px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-btn" onclick="window.history.back()"><i class="fas fa-arrow-left"></i></button>
+        <div class="logo">
+            <div class="logo-icon"><i class="fas fa-crown"></i></div>
+            <div class="logo-text">尊享服务</div>
+        </div>
+        <div class="title" id="exp-title">体验详情</div>
+        <div class="desc" id="exp-desc"></div>
+        <div class="price-list" id="price-list"></div>
+        <div class="feature-list">
+            <div class="feature"><i class="fas fa-shield-alt"></i>安全可靠 · 数据加密</div>
+            <div class="feature"><i class="fas fa-certificate"></i>品质保证 · 诚信经营</div>
+            <div class="feature"><i class="fas fa-headset"></i>7×24小时客服支持</div>
+            <div class="feature"><i class="fas fa-award"></i>行业认证 · 值得信赖</div>
+        </div>
+        <div class="footer">
+            <p>© 2023 尊享服务平台 · 诚信为本 品质至上 · 隐私政策 | 服务条款</p>
+        </div>
+    </div>
+    <script>
+        // 体验内容数据
+        const expData = {
+            low: {
+                title: '低端体验',
+                desc: '经济实惠的基础服务，满足您的日常需求。高性价比选择，专业团队保障服务质量。',
+                prices: [
+                    { label: '单次', price: '800元', duration: '60分钟' },
+                    { label: '两次', price: '1000元', duration: '90分钟' }
+                ]
+            },
+            mid: {
+                title: '中端体验',
+                desc: '平衡性能与价格的最佳选择，提供更多定制化选项。专业团队全程支持。',
+                prices: [
+                    { label: '单次', price: '1200元', duration: '60分钟' },
+                    { label: '两次', price: '1600元', duration: '90分钟' }
+                ]
+            },
+            high: {
+                title: '高端体验',
+                desc: '尊贵专属的VIP服务，个性化定制方案。专业团队一对一服务，尊享优先通道。',
+                prices: [
+                    { label: '单次', price: '2500元', duration: '60分钟' },
+                    { label: '两次', price: '3000元', duration: '90分钟' },
+                    { label: '过夜', price: '4500元', duration: '8-10小时' }
+                ]
+            }
+        };
+        // 获取URL参数
+        function getQueryParam(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+        const type = getQueryParam('type');
+        const data = expData[type] || expData['low'];
+        document.getElementById('exp-title').textContent = data.title;
+        document.getElementById('exp-desc').textContent = data.desc;
+        const priceList = document.getElementById('price-list');
+        data.prices.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'price-item';
+            div.innerHTML = `<span>${item.label}</span><span>${item.price} <span class="duration">${item.duration}</span></span>`;
+            priceList.appendChild(div);
+        });
+        // 低端体验添加额外说明
+        if(type === 'low') {
+            const extra = document.createElement('div');
+            extra.style = 'margin-top:18px; color:#ffe066; font-size:22px; text-align:center; font-weight:900; letter-spacing:1px; text-shadow:0 2px 8px #000, 0 0px 2px #d4af37; padding:8px 0;';
+            extra.innerHTML = '没有照片，见本人决定<br>有工作室，也可以外卖';
+            priceList.parentNode.insertBefore(extra, priceList.nextSibling);
+
+            // 添加门店按钮
+            const storeBtns = document.createElement('div');
+            storeBtns.style = 'margin-top:18px; display:flex; justify-content:center; gap:20px;';
+            // 盘龙店高德地图跳转链接
+            const panlongBtn = document.createElement('button');
+            panlongBtn.textContent = '盘龙店';
+            panlongBtn.style = 'padding:10px 24px; border-radius:24px; border:none; background:#f9e076; color:#0c1a2d; font-size:16px; font-weight:600; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.08);';
+            panlongBtn.onclick = function() {
+                window.open('https://surl.amap.com/t0HuS5f1tgjV','_blank');
+            };
+            // 五华店高德地图跳转链接
+            const wuhuaBtn = document.createElement('button');
+            wuhuaBtn.textContent = '五华店';
+            wuhuaBtn.style = 'padding:10px 24px; border-radius:24px; border:none; background:#f9e076; color:#0c1a2d; font-size:16px; font-weight:600; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.08);';
+            wuhuaBtn.onclick = function() {
+                window.open('https://surl.amap.com/t4aUPNPGga2','_blank');
+            };
+            storeBtns.appendChild(panlongBtn);
+            storeBtns.appendChild(wuhuaBtn);
+            extra.parentNode.insertBefore(storeBtns, extra.nextSibling);
+        }
+        // 中端体验添加门店按钮
+        if(type === 'mid') {
+            // 插入说明文字
+            const info = document.createElement('div');
+            info.style = `
+              margin-top:18px;
+              color:#ffe066;
+              font-size:20px;
+              text-align:center;
+              font-weight:700;
+              letter-spacing:1px;
+              text-shadow:0 2px 8px #000, 0 0px 2px #d4af37;
+              padding:12px 0;
+              border-radius:18px;
+              border:2px solid;
+              border-image: linear-gradient(90deg, #d4af37, #f9e076) 1;
+              background: rgba(255,255,255,0.04);
+              box-shadow:0 2px 8px rgba(212,175,55,0.10);
+            `;
+            info.textContent = '所有的资料可以私聊我给你发';
+            priceList.parentNode.insertBefore(info, priceList.nextSibling);
+            const storeBtns = document.createElement('div');
+            storeBtns.style = 'margin-top:18px; display:flex; justify-content:center; gap:20px;';
+            // 西山店
+            const xishanBtn = document.createElement('button');
+            xishanBtn.textContent = '西山店';
+            xishanBtn.style = 'padding:10px 24px; border-radius:24px; border:none; background:#f9e076; color:#0c1a2d; font-size:16px; font-weight:600; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.08);';
+            xishanBtn.onclick = function() {
+                window.open('https://surl.amap.com/t4jgbLvl3AA','_blank');
+            };
+            // 关上店
+            const guanshangBtn = document.createElement('button');
+            guanshangBtn.textContent = '关上店';
+            guanshangBtn.style = 'padding:10px 24px; border-radius:24px; border:none; background:#f9e076; color:#0c1a2d; font-size:16px; font-weight:600; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.08);';
+            guanshangBtn.onclick = function() {
+                window.open('https://surl.amap.com/t3nREdf1q4cR','_blank');
+            };
+            // 螺蛳湾店
+            const luosiwanBtn = document.createElement('button');
+            luosiwanBtn.textContent = '螺蛳湾店';
+            luosiwanBtn.style = 'padding:10px 24px; border-radius:24px; border:none; background:#f9e076; color:#0c1a2d; font-size:16px; font-weight:600; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.08);';
+            luosiwanBtn.onclick = function() {
+                window.open('https://surl.amap.com/t4PVY6h1w6yV','_blank');
+            };
+            storeBtns.appendChild(xishanBtn);
+            storeBtns.appendChild(guanshangBtn);
+            storeBtns.appendChild(luosiwanBtn);
+            priceList.parentNode.insertBefore(storeBtns, priceList.nextSibling);
+        }
+        // 高端体验添加温馨提示
+        if(type === 'high') {
+            const tip = document.createElement('div');
+            tip.style = `
+              margin-top:18px;
+              color:#ffd700;
+              font-size:20px;
+              text-align:center;
+              font-weight:700;
+              letter-spacing:1px;
+              text-shadow:0 2px 8px #000, 0 0px 2px #d4af37;
+              padding:14px 0;
+              border-radius:18px;
+              border:2px solid;
+              border-image: linear-gradient(90deg, #d4af37, #f9e076) 1;
+              background: rgba(255,255,255,0.07);
+              box-shadow:0 2px 8px rgba(212,175,55,0.13);
+            `;
+            tip.innerHTML = '温馨提示：<br>每个人都有自己的工作室，也可以外出<br>所有的资料私聊我自取';
+            priceList.parentNode.insertBefore(tip, priceList.nextSibling);
+        }
+    </script>
+</body>
+</html> 
