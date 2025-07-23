@@ -150,6 +150,31 @@
             padding: 20px;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
+        #resource-titles {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            margin: 36px 0 36px 0;
+            flex-wrap: wrap;
+            padding: 18px 0;
+            background: linear-gradient(90deg, rgba(12,26,45,0.95) 0%, rgba(15,43,70,0.95) 100%);
+            border-radius: 20px;
+            border: 2px solid #1e3557;
+            box-shadow: 0 4px 24px rgba(30,53,87,0.18);
+        }
+        #resource-titles span {
+            font-size: 2.6rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #5ec6ff 30%, #b3eaff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 4px;
+            text-shadow: 0 4px 16px #0c1a2d, 0 1px 0 #b3eaff;
+            padding: 10px 28px;
+            border-radius: 14px;
+            margin: 0 10px;
+        }
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -159,6 +184,15 @@
             .logo-text { font-size: 20px; }
             .title { font-size: 20px; }
             .price-item { font-size: 15px; padding: 12px 10px; }
+            #resource-titles {
+                gap: 16px;
+                padding: 10px 0;
+            }
+            #resource-titles span {
+                font-size: 1.3rem;
+                padding: 6px 10px;
+                letter-spacing: 2px;
+            }
         }
     </style>
 </head>
@@ -168,6 +202,12 @@
         <div class="logo">
             <div class="logo-icon"><i class="fas fa-crown"></i></div>
             <div class="logo-text">昆明娱乐指南</div>
+        </div>
+        <div id="resource-titles" style="display:none;">
+          <span>学生</span>
+          <span>模特</span>
+          <span>网红</span>
+          <span>各类资源</span>
         </div>
         <div class="title" id="exp-title">体验详情</div>
         <div class="desc" id="exp-desc"></div>
@@ -324,6 +364,9 @@
             `;
             tip.innerHTML = '温馨提示：<br>每个人都有自己的工作室，也可以外出<br>所有的资料私聊我自取';
             priceList.parentNode.insertBefore(tip, priceList.nextSibling);
+        }
+        if(type === 'high') {
+            document.getElementById('resource-titles').style.display = 'flex';
         }
     </script>
 </body>
